@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -r \"livewire\\\\|Livewire\\\\|wire:\" /home/ninetydev/Desktop/Avtomaktab/avtomaktab/resources/views --include=*.blade.php -l)",
+      "Bash(cat /home/ninetydev/Desktop/Avtomaktab/avtomaktab/database/migrations/*lesson*)"
+    ]
+  }
+}

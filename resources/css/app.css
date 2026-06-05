@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[x-cloak] { display: none !important; }
+
+/* ── Custom scrollbar ─────────────────────────────────────── */
+.scrollbar-thin::-webkit-scrollbar { width: 4px; }
+.scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+.scrollbar-thin::-webkit-scrollbar-thumb { background: #1e2d3d; border-radius: 4px; }
+.scrollbar-thin::-webkit-scrollbar-thumb:hover { background: #2d4156; }
+
+/* ── Sidebar nav active indicator ────────────────────────── */
+.nav-item-active {
+    position: relative;
+}
+.nav-item-active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 18px;
+    background: linear-gradient(180deg, #10b981, #059669);
+    border-radius: 0 3px 3px 0;
+}
+
+/* ── Animations ──────────────────────────────────────────── */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(20px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.4; }
+}
+
+.animate-fade-up    { animation: fadeUp 0.35s ease-out forwards; }
+.animate-slide-in   { animation: slideInRight 0.3s ease-out forwards; }
+.animate-pulse-dot  { animation: pulse-dot 1.8s ease-in-out infinite; }
+
+/* ── Stat card shimmer hover ─────────────────────────────── */
+.stat-card {
+    position: relative;
+    overflow: hidden;
+}
+.stat-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0) 60%, rgba(255,255,255,0.06) 100%);
+    pointer-events: none;
+}
+
+/* ── Glassmorphism toast ─────────────────────────────────── */
+.toast-glass {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+/* ── Sidebar gradient ────────────────────────────────────── */
+.sidebar-bg {
+    background: linear-gradient(180deg, #060b14 0%, #0b1120 60%, #0d1426 100%);
+}
+
+/* ── Card accent borders ─────────────────────────────────── */
+.card-accent-emerald { border-left: 3px solid #10b981; }
+.card-accent-blue    { border-left: 3px solid #3b82f6; }
+.card-accent-amber   { border-left: 3px solid #f59e0b; }
+.card-accent-red     { border-left: 3px solid #ef4444; }
+.card-accent-purple  { border-left: 3px solid #8b5cf6; }
+.card-accent-indigo  { border-left: 3px solid #6366f1; }
+
+/* ── Focus ring override ─────────────────────────────────── */
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.18);
+}
+
+/* ── Page transition ─────────────────────────────────────── */
+.page-content {
+    animation: fadeUp 0.25s ease-out;
+}
+
+/* ── Table hover rows ────────────────────────────────────── */
+.table-row-hover:hover {
+    background: rgba(16, 185, 129, 0.035);
+}
